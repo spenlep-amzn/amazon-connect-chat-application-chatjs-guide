@@ -8,7 +8,7 @@ This guide will walk through how to use a personal chat backend and Amazon Conne
 
 > If you wish to build an application with the [v3 JavaScript AWS SDK](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-connectparticipant/) directly, please refer to ["Building a Chat application for Amazon Connect with AWS SDK"](https://github.com/spenlep-amzn/amazon-connect-chat-application-aws-sdk-guide)
 
-![](./chat-application-architecture.png)
+![](./chat-application-architecture-chatjs.png)
 
 ## Sequence of API Calls
 
