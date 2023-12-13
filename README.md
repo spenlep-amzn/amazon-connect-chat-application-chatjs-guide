@@ -149,7 +149,7 @@ await chatSession.sendMessage({
 });
 ```
 
-####  Handling events
+####  Triggering events
 
 Send more chat events using the [SendEvent](https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html) API
 
@@ -174,6 +174,41 @@ const awsSdkResponse = await chatSession.getTranscript({
   sortOrder: "ASCENDING"
 });
 const { InitialContactId, NextToken, Transcript } = awsSdkResponse.data;
+```
+
+
+####  Handling incoming WebSocket events
+
+Add `chatSession` event listeners to handle incoming WebSocket events. Refer to [ChatJS Documentation](https://github.com/amazon-connect/amazon-connect-chatjs) for complete list
+
+```js
+await chatSession.connect();
+
+// ...
+
+chatSession.onMessage(event => {
+  const { chatDetails, data } = event;
+  switch (data.ContentType) {
+    // ...
+  }
+});
+
+chatSession.onConnectionBroken(event => {
+  const { chatDetails } = event;
+  // ...
+});
+
+chatSession.onEnded(event => {
+  const { chatDetails, data } = event;
+  // ...
+});
+
+chatSession.onTyping(event => {
+  const { chatDetails, data } = event;
+  if (data.ParticipantRole === "AGENT") {
+    // ...
+  }
+});
 ```
 
 ### End a chat
