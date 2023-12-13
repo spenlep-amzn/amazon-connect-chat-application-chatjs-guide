@@ -1,4 +1,4 @@
-# Building a Chat application for Amazon Connect with AWS SDK
+# Building a Chat application for Amazon Connect with ChatJS
 
 ## Overview
 
